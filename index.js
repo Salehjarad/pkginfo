@@ -15,7 +15,7 @@ const clear = () => {
 
 process.stdout.write('\nCollecting info...')
 
-axios.get('http://registry.npmjs.org/react')
+axios.get(`http://registry.npmjs.org/${process.argv[2]}`)
     .then(results => {
         if(results.statusText === 'OK') {
         
@@ -29,7 +29,7 @@ axios.get('http://registry.npmjs.org/react')
                     let name = ms["name"];
                     let description = ms["description"];
                     let version = ms["version"];
-                    let auther = "sja";//ms["author"]["name"];
+                    // let auther =  ms["author"]["name"] != undefined ? ms["author"]["name"]  : "***";
                     let size = ms["dist"]["unpackedSize"];
                     console.log('\n')
                     console.log(chalk.grey(`* ${name} has bean updated ${chalk.blueBright(updatedTime)} time`))
@@ -38,7 +38,6 @@ axios.get('http://registry.npmjs.org/react')
                     logCool('Name', name);
                     logCool('Description' ,description);
                     logCool('Last Version' ,version);
-                    logCool('Auther' ,auther);
                     logCool('Dependencies With Package', repLength);
                     logCool('Size',size);
                     console.log("===================================")
