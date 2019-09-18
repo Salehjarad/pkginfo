@@ -1,0 +1,22 @@
+{
+  "name": "pkginfo",
+  "version": "1.0.0",
+  "description": "Info about npm package",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "npm",
+    "package",
+    "info",
+    "list",
+    "new"
+  ],
+  "author": "saleh jarad",
+  "license": "ISC",
+  "dependencies": {
+    "axios": "^0.19.0",
+    "chalk": "^2.4.2"
+  }
+}
