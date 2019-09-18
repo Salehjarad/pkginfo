@@ -2,11 +2,12 @@ const axios = require('axios').default;
 const chalk = require('chalk').default;
 const readline = require('readline')
 
-
+// colored logs
 const logCool = (name, des) => {
     console.log(chalk.magentaBright('[+] ') + chalk.cyan(`${name}:: ${chalk.greenBright(des)}`));
 }
 
+// clear loading line
 const clear = () => {
     readline.clearLine(process.stdout, 0);
     readline.cursorTo(process.stdout, 0, null)
